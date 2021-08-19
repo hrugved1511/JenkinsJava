@@ -25,7 +25,7 @@ node{
    }*/
    stage('Deploy to Tomcat'){
      /*sh "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""*/
-     deploy adapters: [tomcat9(credentialsId: 'a8dc96f5-bcca-4ac7-ad50-cba418149d71', path: '', url: 'http://192.168.1.8:8080')], contextPath: null, war: '**/*.war'
+     deploy adapters: [tomcat9(credentialsId: 'deployer', path: '', url: 'http://192.168.1.8:8080')], contextPath: null, war: '**/*.war'
    }
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
