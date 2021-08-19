@@ -14,9 +14,5 @@ node{
      
      deploy adapters: [tomcat9(credentialsId: '73f81183-1ae7-48cc-be64-5d7ed3285fbb', path: '', url: 'http://192.168.1.8:8081')], contextPath: null, war: '**/*.war'
    }
-      stage ('Start Tomcat Server') {
-         sleep(time:5,unit:"SECONDS") 
-         sh "${tomcatBin}\\startup.bat"
-         sleep(time:100,unit:"SECONDS")
-   }
+      
 }
