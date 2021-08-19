@@ -4,6 +4,9 @@ node{
    stage('SCM Checkout'){
      checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '3c9f8f3d-28eb-4468-941c-ea9ba910de67', url: 'https://gitlab.xpanxion.com/Hrugved.Chavan/javaprojectforjenkins.git']]])
    }
+   stage ('build')  {
+    sh "${mvnHome}/bin/mvn clean install -f MyWebApp/pom.xml"
+    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
       def mvnHome =  tool name: 'maven-3.6.3', type: 'maven'   
