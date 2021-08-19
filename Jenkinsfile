@@ -2,7 +2,7 @@ node{
 
    
    stage('SCM Checkout'){
-     git 'https://github.com/sivajavatechie/JenkinsWar.git'
+     checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '3c9f8f3d-28eb-4468-941c-ea9ba910de67', url: 'https://gitlab.xpanxion.com/Hrugved.Chavan/javaprojectforjenkins.git']]])
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
