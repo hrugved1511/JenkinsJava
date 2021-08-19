@@ -12,7 +12,7 @@ node{
       }
 
    stage('Deploy to Tomcat'){
-     input message: 'Deploy on Tomcat or not', ok: 'Deploy'
+     input message: 'Deploy war file on tomcat', ok: 'Deploy'
      deploy adapters: [tomcat9(credentialsId: '73f81183-1ae7-48cc-be64-5d7ed3285fbb', path: '', url: 'http://192.168.1.8:8081')], contextPath: null, war: '**/*.war'
    }
       
