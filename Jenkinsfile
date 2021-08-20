@@ -24,7 +24,7 @@ node{
             echo "The answer is: ${USER_INPUT}"
 
             if( "${USER_INPUT}" == "yes"){
-                deploy adapters: [tomcat9(credentialsId: '73f81183-1ae7-48cc-be64-5d7ed3285fbb', path: '', url: 'http://192.168.1.8:8081')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: '73f81183-1ae7-48cc-be64-5d7ed3285fbb', path: '', url: 'http://192.168.1.7:8081')], contextPath: null, war: '**/*.war'
             } else {
                 //do something else
             }
