@@ -12,8 +12,23 @@ node{
       }
 
    stage('Deploy to Tomcat'){
-     input message: 'Deploy war file on Tomcat Server', ok: 'Deploy'
-     deploy adapters: [tomcat9(credentialsId: '73f81183-1ae7-48cc-be64-5d7ed3285fbb', path: '', url: 'http://192.168.1.8:8081')], contextPath: null, war: '**/*.war'
+     def USER_INPUT = input(
+                    message: 'User input required - Some Yes or No question?',
+                    parameters: [
+                            [$class: 'ChoiceParameterDefinition',
+                             choices: ['no','yes'].join('\n'),
+                             name: 'input',
+                             description: 'Menu - select box option']
+                    ])
+
+            echo "The answer is: ${USER_INPUT}"
+
+            if( "${USER_INPUT}" == "yes"){
+                deploy adapters: [tomcat9(credentialsId: '73f81183-1ae7-48cc-be64-5d7ed3285fbb', path: '', url: 'http://192.168.1.8:8081')], contextPath: null, war: '**/*.war'
+            } else {
+                //do something else
+            }
+     
    }
       
 }
