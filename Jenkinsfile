@@ -12,6 +12,8 @@ node{
       }
 
    stage('Deploy to Tomcat'){
+   //any one of two
+   /*input message: 'Deploy war file on Tomcat Server', ok: 'Deploy'*/
      def USER_INPUT = input(
                     message: 'User input required - Some Yes or No question?',
                     parameters: [
