@@ -9,4 +9,4 @@ RUN mvn clean package
 
 # set the startup command to execute the jar 
 #CMD ["java", "-jar", "target/JenkinsJava-0.0.1-SNAPSHOT.jar"]
-COPY target/JenkinsWar1-0.0.1-SNAPSHOT.war /src/main/webapp/
+#COPY target/JenkinsWar1-0.0.1-SNAPSHOT.war /src/main/webapp/
