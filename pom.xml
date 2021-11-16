@@ -15,7 +15,23 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <build>
+<!--   <build>
     <finalName>JenkinsWar</finalName>
-  </build>
+  </build> -->
+  <build>  
+    <plugins>  
+        <plugin>  
+            <!-- Build an executable JAR -->  
+            <groupId>org.apache.maven.plugins</groupId>  
+            <artifactId>maven-jar-plugin</artifactId>  
+            <version>3.1.0</version>  
+            <configuration>  
+                <archive>  
+                    <manifest>
+                    </manifest>  
+                </archive>  
+            </configuration>  
+        </plugin>  
+    </plugins>  
+</build>  
 </project>
